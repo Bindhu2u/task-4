@@ -1,0 +1,123 @@
+/* ========= Root & Utility ========= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-main: 'Segoe UI', sans-serif;
+
+  /* Brand palette */
+  --grad-bg-from: #ffecd2;
+  --grad-bg-to:   #fcb69f;
+
+  --grad-header-from: #6a11cb;
+  --grad-header-to:   #2575fc;
+
+  --card-bg:      #ffffffcc;
+  --card-shadow:  0 2px 10px rgba(0, 0, 0, 0.15);
+
+  --accent-1: #6a11cb;
+  --accent-2: #2575fc;
+  --accent-3: #f6d365;
+  --accent-4: #fda085;
+}
+
+/* ========= Global ========= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: linear-gradient(to right, var(--grad-bg-from), var(--grad-bg-to));
+  color: #333;
+}
+
+/* ========= Header & Navigation ========= */
+header {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  color: #fff;
+  background: linear-gradient(45deg, var(--grad-header-from), var(--grad-header-to));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+nav {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+nav a,
+nav button {
+  font-weight: 600;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.25s;
+}
+nav a:hover,
+nav button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ========= Sections ========= */
+section {
+  display: none;               /* toggled to block via JS */
+  padding: 2rem 1rem;
+}
+section.active { display: block; }
+
+.card {
+  background: var(--card-bg);
+  margin: 1rem auto;
+  padding: 2rem;
+  max-width: 700px;
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+/* ========= 1. Personal Portfolio ========= */
+/* (Mostly uses .card plus global styles) */
+
+/* ========= 2. To-Do List ========= */
+#todo input[type="text"] {
+  width: min(90%, 350px);
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+#todo button.add-task {
+  background: var(--accent-1);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+#todo button.add-task:hover { opacity: 0.9; }
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+#taskList li {
+  background: #fff;
+  margin: 0.4rem auto;
+  max-width: 420px;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.55rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ========= 3. Product Listing ========= */
+#products .controls {
